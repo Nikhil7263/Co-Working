@@ -49,6 +49,11 @@ app.set("io", io);
 app.use(cors());
 app.use(express.json());
 
+// Home route — friendly message when someone opens the backend URL
+app.get("/", (req, res) => {
+  res.status(200).send("Smart Co-Working API is running");
+});
+
 // Test route — confirms the server itself is running
 app.get("/api/test", (req, res) => {
   res.status(200).json({ message: "Smart Co-Working API is running" });
